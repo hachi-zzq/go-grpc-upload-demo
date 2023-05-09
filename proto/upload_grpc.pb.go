@@ -76,6 +76,7 @@ func (x *uploadServiceUploadClient) CloseAndRecv() (*UploadResponse, error) {
 // for forward compatibility
 type UploadServiceServer interface {
 	Upload(UploadService_UploadServer) error
+	mustEmbedUnimplementedUploadServiceServer()
 }
 
 // UnimplementedUploadServiceServer must be embedded to have forward compatible implementations.

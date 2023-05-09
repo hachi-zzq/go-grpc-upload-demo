@@ -15,6 +15,7 @@ import (
 )
 
 type Server struct {
+	uploadpb.UnimplementedUploadServiceServer
 	storage storage.Manager
 }
 
@@ -22,11 +23,6 @@ func NewServer(storage storage.Manager) Server {
 	return Server{
 		storage: storage,
 	}
-}
-
-func (s Server) mustEmbedUnimplementedUploadServiceServer() {
-	//TODO implement me
-	panic("implement me")
 }
 
 func (s Server) Upload(stream uploadpb.UploadService_UploadServer) error {
